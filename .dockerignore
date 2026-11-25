@@ -1,0 +1,7 @@
+node_modules
+.next
+data
+data-*
+fixtures/out
+test-results
+.git

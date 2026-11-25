@@ -1,0 +1,15 @@
+services:
+  aurora:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - aurora-data:/data          # database, uploads, artwork, caches
+      # - /path/to/your/music:/music:ro   # optional: index a music folder (then set MUSIC_DIR=/music)
+    environment:
+      # MUSIC_DIR: /music
+      # COOKIE_SECURE: "1"          # set when serving over HTTPS behind a proxy that doesn't send X-Forwarded-Proto
+      # ALLOW_SIGNUP: "1"           # allow additional accounts (can also be toggled in Settings)
+    restart: unless-stopped
+volumes:
+  aurora-data:
